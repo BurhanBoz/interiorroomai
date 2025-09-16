@@ -1,2 +1,7 @@
-package com.boz.interiorroomai.repository;public interface FeedbackRepository {
+package com.boz.interiorroomai.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface FeedbackRepository {
 }
