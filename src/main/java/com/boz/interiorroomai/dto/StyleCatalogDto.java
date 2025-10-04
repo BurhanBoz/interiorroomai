@@ -6,20 +6,18 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto implements Serializable {
+public class StyleCatalogDto implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private Long userId;
-    private String userName;
-    private String password;
-    private String role = "USER";
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private Long styleId;
+
+    private String name;
+    private String description;
+    private Boolean active = true;
 }

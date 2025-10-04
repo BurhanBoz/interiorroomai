@@ -18,7 +18,7 @@ public class JobOutputDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long outputId;
-    private JobEntity job;
+    private JobDto job;
     private String imageUrl;
     private String qualityType; // SD, ControlNet, ESRGAN
     private LocalDateTime createdAt;

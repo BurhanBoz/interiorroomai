@@ -19,8 +19,8 @@ public class FeedbackDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long feedbackId;
-    private JobEntity job;
-    private UserEntity user;
+    private JobDto job;
+    private UserDto user;
     private Integer rating;
     private String comment;
     private LocalDateTime createdAt;

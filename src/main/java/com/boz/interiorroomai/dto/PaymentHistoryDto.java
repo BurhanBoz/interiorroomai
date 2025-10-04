@@ -1,28 +1,31 @@
 package com.boz.interiorroomai.dto;
 
 import com.boz.interiorroomai.entity.PlanEntity;
-import com.boz.interiorroomai.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SubscriptionDto implements Serializable {
+public class PaymentHistoryDto implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private Long subscriptionId;
+    private Long paymentId;
     private UserDto user;
     private PlanDto plan;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private String status; // ACTIVE, CANCELED, EXPIRED
-    private Boolean autoRenew;
+
+    private BigDecimal amount;
+    private String currency;
+    private String status; // SUCCESS, FAILED, PENDING
+    private String provider; // Stripe, Iyzico
+    private String transactionRef;
+    private LocalDateTime createdAt;
 }

@@ -20,9 +20,9 @@ public class CustomUserDetailServiceImpl implements UserDetailsService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        UserEntity user = userRepository.findByEmail(email);
-        return new User(user.getEmail(), user.getPasswordHash(), new ArrayList<>());
+    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+        UserEntity user = userRepository.findByUserName(userName);
+        return new User(user.getUserName(), user.getPassword(), new ArrayList<>());
     }
 
     public UserDto loadUserByUserName(String userName) {

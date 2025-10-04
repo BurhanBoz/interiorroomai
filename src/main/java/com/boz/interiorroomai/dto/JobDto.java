@@ -19,9 +19,9 @@ public class JobDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long jobId;
-    private UserEntity user;
-    private PlanEntity plan;
-    private String style;
+    private UserDto user;
+    private PlanDto plan;
+    private StyleCatalogDto style;
     private String status;
     private LocalDateTime createdAt;
     private Integer creditUsed;

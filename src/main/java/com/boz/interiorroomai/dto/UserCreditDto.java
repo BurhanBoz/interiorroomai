@@ -19,8 +19,8 @@ public class UserCreditDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long userCreditId;
-    private UserEntity user;
-    private PlanEntity plan;
+    private UserDto user;
+    private PlanDto plan;
     private Integer totalCredits;
     private Integer remainingCredits;
     private LocalDateTime purchaseDate;

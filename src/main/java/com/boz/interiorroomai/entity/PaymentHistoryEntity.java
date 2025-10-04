@@ -5,18 +5,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-// JOB
 @Entity
-@Table(name = "job")
+@Table(name = "payment_history")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class JobEntity {
+@NoArgsConstructor
+public class PaymentHistoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long jobId;
+    private Long paymentId;
 
     @ManyToOne @JoinColumn(name = "user_id")
     private UserEntity user;
@@ -24,9 +24,10 @@ public class JobEntity {
     @ManyToOne @JoinColumn(name = "plan_id")
     private PlanEntity plan;
 
-    @ManyToOne @JoinColumn(name = "style_id")
-    private StyleCatalogEntity style;
-    private String status;
+    private BigDecimal amount;
+    private String currency;
+    private String status; // SUCCESS, FAILED, PENDING
+    private String provider; // Stripe, Iyzico
+    private String transactionRef;
     private LocalDateTime createdAt;
-    private Integer creditUsed;
 }
